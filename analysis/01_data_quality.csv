@@ -1,0 +1,2 @@
+total_rows,distinct_transactions,duplicate_id_count,blank_ids,invalid_numeric_rows
+30000,30000,0,0,0
