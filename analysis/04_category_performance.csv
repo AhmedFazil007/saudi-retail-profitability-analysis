@@ -1,0 +1,6 @@
+product_category,transactions,units_sold,revenue_sar,gross_profit_sar,margin_pct,avg_discount_pct
+Electronics,5996,11795,14937371.99,4030623.81,26.98,8.42
+Clothing,5897,11845,1508309.41,399606.89,26.49,8.46
+Home & Living,6056,12050,1487748.66,399982.34,26.89,8.44
+Beauty & Personal Care,5940,11795,1457766.76,392708.96,26.94,8.34
+Groceries,6111,12256,232078.22,62170.57,26.79,8.32
