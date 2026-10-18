@@ -1,60 +1,136 @@
 # Saudi Retail Profitability & Revenue Driver Analysis
 
-**Interactive 3-page portfolio dashboard | 30,000 synthetic transactions | 2023–2025**
+### Business intelligence portfolio case study | 30,000 synthetic transactions | 2023–2025
 
-> **Synthetic data disclosure:** This is a fictional Saudi retail scenario for analytics demonstration. Figures are not real company performance, and recommendations are not implemented business outcomes.
+**Focus:** Revenue concentration · Gross margin · Discount effectiveness · Product performance · Geographic and channel analysis
 
-## Executive summary
+> **Dataset disclosure:** This project analyzes a fictional Saudi retail dataset. Results are simulated analytical findings, not actual company performance. Recommendations have not been implemented or measured in a real business.
 
-A fictional multi-city retailer needs to understand the drivers of sales, gross profitability, discount performance, and geographic differences. This project analyzes transaction-level data and presents commercial insights in an interactive browser-based dashboard.
+## Executive overview
 
-| KPI | Result |
+![Executive Overview Dashboard](RetailSales-Dashboard_Executive-Overview.png)
+
+A fictional multi-city retailer needed visibility into which products, categories, sales channels, and locations were driving sales and estimated gross profitability. I analyzed 30,000 transaction records and developed a three-page reporting experience to support commercial decisions.
+
+| Key performance indicator | Result |
 |---|---:|
-| Revenue | 19.62M SAR |
-| Estimated gross profit | 5.29M SAR |
-| Estimated gross margin | 26.93% |
-| Transactions | 30,000 |
-| Average order value | 654.11 SAR |
+| Total revenue | **SAR 19.62M** |
+| Estimated gross profit | **SAR 5.29M** |
+| Estimated gross margin | **26.93%** |
+| Transactions | **30,000** |
+| Average order value | **SAR 654.11** |
 
-## Key findings and recommendations
+## Business insights and recommendations
 
-1. **Category concentration:** Electronics contributes approximately **76.1%** of revenue (14.94M SAR). **Action:** Monitor high-value electronics inventory and explore diversification opportunities.
-2. **Discount sensitivity:** Estimated gross margin is **32.93%** on non-discounted transactions versus **18.94%** on transactions discounted above 10%—a **13.99 percentage-point difference**. **Action:** Evaluate discounts by product and test promotions before adjusting policy. This is an association, not proof of causation.
-3. **Channel balance:** Branch contributes approximately **50.4%** of revenue and E-commerce **49.6%**. **Action:** Maintain cross-channel performance tracking and investigate city-level margin variation.
+### 1. Electronics revenue concentration
 
-## Explore the dashboard
+**Finding:** Electronics contributed approximately **76.1% of total revenue**, or **SAR 14.94M**. Laptops and smartphones were especially important revenue drivers.
 
-Open [dashboard/index.html](dashboard/index.html) in Chrome or Edge after downloading the project files. The dashboard uses a fixed **1920 × 1080** canvas with page navigation positioned beneath it.
+**Commercial implication:** Sales performance is sensitive to a relatively concentrated product mix.
 
-- **Executive Overview:** KPIs, monthly trends, products, channels, and categories.
-- **Product & Discount Analysis:** profitability, discount bands, and product performance.
-- **Geographic & Channel Performance:** city and channel comparisons.
+**Recommendation:** Monitor high-value electronics inventory and product-level profitability while exploring diversification opportunities.
 
-The HTML is an offline interactive deliverable, **not a native .pbix or Tableau workbook**.
+### 2. Gross margin varies by discount band
 
-## Project structure
+**Finding:** Non-discounted transactions generated an estimated **32.93% gross margin**, compared with **18.94%** for transactions discounted above 10% — a **13.99 percentage-point difference**.
+
+**Commercial implication:** Deeper discounts are associated with lower estimated gross margins, although this does not prove that removing discounts would increase profit.
+
+**Recommendation:** Evaluate promotion performance by product and discount band; use controlled tests before revising pricing policies.
+
+### 3. Channels are balanced; city-level performance differs
+
+**Finding:** Branch sales generated approximately **50.4%** of revenue, and E-commerce **49.6%**. Geographic margins vary, creating opportunities for more detailed analysis.
+
+**Recommendation:** Monitor both channels consistently and investigate city-level product mix, pricing, and discounts.
+
+## Dashboard gallery
+
+### 01 — Executive Overview
+
+![Executive Overview](RetailSales-Dashboard_Executive-Overview.png)
+
+**Includes:** revenue and profit KPIs, monthly performance, top products, sales-channel mix, and product-category revenue contribution.
+
+### 02 — Product & Discount Analysis
+
+![Product and Discount Analysis](RetailSales-Dashboard_Product&Discount-Analysis.png)
+
+**Includes:** category revenue and gross profit, category margins, discount-band performance, and top products by gross profit.
+
+### 03 — Geographic & Channel Performance
+
+![Geographic and Channel Performance](RetailSales-Dashboard_Geographic&Channel-Performance.png)
+
+**Includes:** city revenue, gross profit by city, sales-channel mix, and customer-segment revenue.
+
+> The three images are screenshots of the interactive dashboard. **The executable HTML dashboard is not currently included in this repository**, so the GitHub page provides a visual portfolio showcase rather than a live interactive report. The screenshots are not a native Power BI (.pbix) or Tableau (.twbx) file.
+
+## Data and analysis workflow
+
+1. **Data preparation:** Review transaction identifiers, dates, monetary values, categories, locations, discounts, and sales channels in the synthetic CSV.
+2. **Data quality:** Validate 30,000 unique transaction IDs and check for blank identifiers or invalid numeric records.
+3. **Financial analysis:** Aggregate revenue and estimated gross profit, calculate gross margins and average order values, and compare category, channel, discount, and geographic performance.
+4. **Reporting:** Present results through executive, product/discount, and geographic/channel dashboard views.
+5. **Recommendations:** Translate descriptive findings into testable business actions, without claiming unverified savings or implemented impact.
+
+### Core KPI definitions
+
+- **Revenue:** Sum of `sales_amount_sar`.
+- **Estimated gross profit:** Sum of `estimated_gross_profit_sar`.
+- **Gross margin:** Estimated gross profit ÷ revenue × 100.
+- **Average order value:** Revenue ÷ distinct transaction count.
+- **Category revenue share:** Category revenue ÷ total revenue within the current analysis context.
+
+### Example SQL
+
+The repository includes [PostgreSQL-style example queries](sql/retail_analysis.sql) for aggregating KPIs, category contribution, and discount bands. These are reproducible examples, **not evidence of an executed production SQL pipeline**.
+
+## Repository structure
 
 ```text
-dashboard/index.html
-data/retail_transactions_synthetic.csv
-analysis/                 # Aggregated results and quality checks
-sql/retail_analysis.sql   # Reproducible PostgreSQL example queries
-assets/design_reference.png
-README.md
+saudi-retail-profitability-analysis/
+├── README.md
+├── 05_retail_transactions_synthetic.csv
+├── RetailSales-Dashboard_Executive-Overview.png
+├── RetailSales-Dashboard_Product&Discount-Analysis.png
+├── RetailSales-Dashboard_Geographic&Channel-Performance.png
+├── analysis/
+│   ├── 01_data_quality.csv
+│   ├── 02_overall_kpis.csv
+│   ├── 04_category_performance.csv
+│   ├── 06_channel_performance.csv
+│   └── 07_discount_bands.csv
+└── sql/
+    └── retail_analysis.sql
 ```
 
-## Methods and tools
+## Explore the files
 
-- **Data:** 30,000 synthetic transaction records across 2023–2025.
-- **Analysis:** revenue and gross-profit aggregation, category mix, product rankings, discount bands, and city/channel comparisons.
-- **SQL:** Example PostgreSQL queries provided for replication; not an executed production ETL pipeline.
-- **Excel/Power BI:** Explored with spreadsheet and Power BI reporting workflows; the repository's main deliverable is HTML.
-- **Quality:** Transaction uniqueness and numeric integrity checks; see analysis/01_data_quality.csv.
+- [Download / view the original synthetic dataset](05_retail_transactions_synthetic.csv)
+- [Data-quality summary](analysis/01_data_quality.csv)
+- [Overall financial KPIs](analysis/02_overall_kpis.csv)
+- [Category performance](analysis/04_category_performance.csv)
+- [Sales-channel performance](analysis/06_channel_performance.csv)
+- [Discount-band analysis](analysis/07_discount_bands.csv)
+- [SQL examples](sql/retail_analysis.sql)
+
+## Tools and skills demonstrated
+
+**Business intelligence:** KPI design, dashboard composition, interactive reporting concepts, revenue analysis, and profitability analysis.
+
+**Data analysis:** Aggregation, segmentation, data validation, product/category ranking, and commercial recommendations.
+
+**Technical artifacts:** CSV dataset, SQL examples, analytical summaries, and dashboard screenshots. The dashboard itself was built as an interactive HTML report; a native PBIX file is not provided here.
 
 ## Limitations
 
-Gross profit is an **estimated** source field, not audited accounting profit. The data is fictional. No incremental lift or causal impact from discounting is established. The dashboard is for portfolio demonstration, not a live production connection.
+- All records are synthetic and do not describe an actual Saudi retailer.
+- Gross profit is an **estimated field**, not audited accounting profit.
+- Observed discount/margin differences do not establish causal effects.
+- No operational improvement, time savings, or financial uplift is claimed.
+- The repository currently hosts screenshots rather than the executable HTML dashboard.
 
-## Suggested topics
+---
 
-`retail-analytics` `business-intelligence` `power-bi` `sql` `data-analysis` `profitability` `dashboard` `portfolio-project`
+**Portfolio project:** Retail Profitability & Revenue Driver Analysis · Saudi retail scenario · 2023–2025
