@@ -20,6 +20,10 @@ The figures are simulated. They don't represent an actual retailer or measured b
 | Transactions | **30,000** |
 | Average order value | **SAR 654.11** |
 
+## Interactive profitability explorer
+
+[Open the interactive discount and margin explorer](dashboard/index.html). It uses the saved aggregate results to compare observed discount bands with the overall estimated margin. I also included a [Python reproduction script](python/discount_margin_analysis.py) for the same comparison. The explorer is a **summary dashboard**, not the original full interactive report or a live data connection.
+
 ## Three findings I'd bring to a business review
 
 ### 1. Electronics drive most of the revenue
