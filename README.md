@@ -8,7 +8,7 @@
 
 ## Executive overview
 
-![Executive Overview Dashboard](RetailSales-Dashboard_Executive-Overview.png)
+![Executive Overview Dashboard](assets/RetailSales-Dashboard_Executive-Overview.png)
 
 A fictional multi-city retailer needed visibility into which products, categories, sales channels, and locations were driving sales and estimated gross profitability. I analyzed 30,000 transaction records and developed a three-page reporting experience to support commercial decisions.
 
@@ -48,19 +48,19 @@ A fictional multi-city retailer needed visibility into which products, categorie
 
 ### 01 — Executive Overview
 
-![Executive Overview](RetailSales-Dashboard_Executive-Overview.png)
+![Executive Overview](assets/RetailSales-Dashboard_Executive-Overview.png)
 
 **Includes:** revenue and profit KPIs, monthly performance, top products, sales-channel mix, and product-category revenue contribution.
 
 ### 02 — Product & Discount Analysis
 
-![Product and Discount Analysis](RetailSales-Dashboard_Product&Discount-Analysis.png)
+![Product and Discount Analysis](assets/RetailSales-Dashboard_Product&Discount-Analysis.png)
 
 **Includes:** category revenue and gross profit, category margins, discount-band performance, and top products by gross profit.
 
 ### 03 — Geographic & Channel Performance
 
-![Geographic and Channel Performance](RetailSales-Dashboard_Geographic&Channel-Performance.png)
+![Geographic and Channel Performance](assets/RetailSales-Dashboard_Geographic&Channel-Performance.png)
 
 **Includes:** city revenue, gross profit by city, sales-channel mix, and customer-segment revenue.
 
@@ -107,7 +107,10 @@ saudi-retail-profitability-analysis/
 
 ## Explore the files
 
-- [Download / view the original synthetic dataset](05_retail_transactions_synthetic.csv)
+- [Original synthetic dataset](data/05_retail_transactions_synthetic.csv)
+- [Dashboard screenshot gallery](assets/)
+
+- [Download / view the original synthetic dataset](data/05_retail_transactions_synthetic.csv)
 - [Data-quality summary](analysis/01_data_quality.csv)
 - [Overall financial KPIs](analysis/02_overall_kpis.csv)
 - [Category performance](analysis/04_category_performance.csv)
