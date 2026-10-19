@@ -2,7 +2,7 @@
 
 **Revenue drivers · Gross margin · Discounts · Retail analytics**
 
-I wanted to explore a question that comes up in almost every retail business: **Are the products bringing in the most revenue also helping the business make money?**
+I started with a straightforward retail question: **Are the products bringing in the most revenue also helping the business make money?**
 
 For this project, I analyzed **30,000 synthetic retail transactions** from a fictional Saudi retailer (2023–2025). I looked at revenue, estimated gross profit, discounts, product categories, sales channels and city-level performance.
 
@@ -22,7 +22,7 @@ The figures are simulated. They don't represent an actual retailer or measured b
 
 ## Interactive profitability explorer
 
-[Open the interactive discount and margin explorer](dashboard/index.html). It uses the saved aggregate results to compare observed discount bands with the overall estimated margin. I also included a [Python reproduction script](python/discount_margin_analysis.py) for the same comparison. The explorer is a **summary dashboard**, not the original full interactive report or a live data connection.
+[Open the interactive discount and margin explorer](dashboard/index.html). It uses the saved aggregate results to compare observed discount bands with the overall estimated margin. The same comparison is available in a [Python reproduction script](python/discount_margin_analysis.py) for the same comparison. The explorer is a **summary dashboard**, not the original full interactive report or a live data connection.
 
 ## Three findings I'd bring to a business review
 
@@ -54,7 +54,7 @@ Branch sales contribute about **50.4%** of revenue and e-commerce about **49.6%*
 
 ![Geographic and channel performance](assets/RetailSales-Dashboard_Geographic&Channel-Performance.png)
 
-These are screenshots of an interactive HTML dashboard. The executable HTML dashboard itself is **not included** in this repository, so this GitHub page is a visual showcase rather than a live report. This project does not include a native Power BI file.
+These screenshots show the original dashboard views. The separate [discount and margin explorer](dashboard/index.html) is available in the repository, but the original full dashboard isn't included. This project does not include a native Power BI file.
 
 ## How I approached the analysis
 
